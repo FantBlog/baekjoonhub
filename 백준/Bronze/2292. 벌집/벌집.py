@@ -8,8 +8,6 @@ else:
     while True:
         i += 1
         count += i
-        # print(f'count = {count}   test = {test}    i = {i}')
         if count >= test:
-            # print(f'칸수 = {i+1}')
             print(i+1)
             break

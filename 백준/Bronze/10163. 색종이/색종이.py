@@ -1,7 +1,5 @@
-import sys
-input = sys.stdin.readline
 t = int(input())
-n = 1000
+n = 1001
 result = [[0 for _ in range(n)] for _ in range(n)]
 for paper in range(1,t+1):
     x,y,c,r = map(int,input().split())

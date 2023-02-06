@@ -1,15 +1,16 @@
-map_x, map_y = map(int, input().split())
-x, y = map(int, input().split())
-time = int(input())
-
-# time = time % (map_x*map_y)
-
-go_x = (x + time) % (map_x*2)
-go_y = (y + time) % (map_y*2)
-
-if go_x > map_x:
-    go_x = 2*map_x - go_x
-if go_y > map_y:
-    go_y = 2*map_y - go_y
-
-print(go_x, go_y)
+import sys
+def ant(x,y,t):
+    x += t
+    y += t
+    x %= 2 * w
+    y %= 2 * h
+    if x > w:
+        x = 2 * w - x
+    if y > h:
+        y = 2 * h - y
+    print(x,y)
+    return x, y
+w,h = map(int,sys.stdin.readline().split())
+x,y = map(int,sys.stdin.readline().split())
+t = int(sys.stdin.readline())
+ant(x,y,t)

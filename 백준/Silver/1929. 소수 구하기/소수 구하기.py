@@ -1,14 +1,13 @@
 import sys
 a,b = map(int,sys.stdin.readline().rstrip('\n').split())
 num_list = [i for i in range(b+1)]
-not_prime_list = [True]*(b+1)
-for i in range(int(b**0.5)+1):
-    if i <= 1:
-        not_prime_list[i] = False
-    else:
-        if not_prime_list[i]:
-            for j in num_list[i*2::i]:
-                not_prime_list[j] = False
-for idx,i in enumerate(not_prime_list):
-    if i and idx >= a:
-        print(num_list[idx])
+prime_list = [True]*(b+1)
+prime_list[0] = False
+prime_list[1] = False
+for i in range(2,int(b**0.5)+1):
+    if prime_list[i]:
+        for j in range(i*2,b+1,i):
+            prime_list[j] = False
+for i in range(a,b+1):
+    if prime_list[i]:
+        print(num_list[i])

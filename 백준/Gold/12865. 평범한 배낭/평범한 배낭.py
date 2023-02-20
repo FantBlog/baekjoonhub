@@ -9,14 +9,11 @@ for _ in range(N):
 
 item.sort(key=lambda x:x[0],reverse=True)
 
-
 for n in range(N):
     w,v = item[n]
-    for i in range(K+1):
-        if i >= w:
-            if n >= 1: # 전수, 더하기, 지금 값
-                dp[i][n] = max(dp[i-1][n], dp[i][n-1] , dp[i-w][n-1] + v)
-            else:
-                dp[i][n] = max(dp[i-1][n], v)
-
-print(max(dp[K]))
+    for i in range(w,K+1):
+        if n >= 1: # 전수, 더하기, 지금 값
+            dp[i][n] = max(dp[i][n-1], dp[i-w][n-1] + v)
+        else:
+            dp[i][n] = max(dp[i-1][n], v)
+print(dp[K][-1])

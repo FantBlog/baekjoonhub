@@ -20,7 +20,7 @@ for tc in range(T):
             arr[i] = dp[i];
             start = i
             end = i
-        elif arr[i] < arr[i-1] + dp[i]:
+        else:
             arr[i] = arr[i-1] + dp[i]
             end = i
             

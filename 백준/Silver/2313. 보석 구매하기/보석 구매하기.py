@@ -3,7 +3,7 @@ def input(): return sys.stdin.readline().rstrip()
 
 total = 0
 T = int(input())
-result = [0] * T
+result = ''
 
 for tc in range(T):
     N = int(input())
@@ -31,9 +31,8 @@ for tc in range(T):
             mx_end = end
             mx_start = start
 
-    result[tc] = (mx_start + 1, mx_end + 1)
+    result += f'{mx_start + 1} {mx_end + 1}\n'
     total += mx
 
 print(total)
-for i in range(T):
-    print(*result[i])
+print(result)

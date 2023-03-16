@@ -8,7 +8,6 @@ result = [0] * T
 for tc in range(T):
     N = int(input())
     arr = list(map(int, input().split()))
-    dp = arr[:]
 
     mx = arr[0]
     mx_start = mx_end = 0
@@ -16,12 +15,11 @@ for tc in range(T):
     start = end = 0
 
     for i in range(1, N):
-        if arr[i] >= arr[i-1] + dp[i]:
-            arr[i] = dp[i];
+        if arr[i] >= arr[i-1] + arr[i]:
             start = i
             end = i
         else:
-            arr[i] = arr[i-1] + dp[i]
+            arr[i] = arr[i-1] + arr[i]
             end = i
             
         if arr[i] > mx:

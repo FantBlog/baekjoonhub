@@ -9,11 +9,11 @@ public class Main {
         
         int N = Integer.parseInt(br.readLine()), point = 0, now, start, end, mid;
         int[] arr = new int[N + 1];
-        
+        arr[0] = -1000000001;
         StringTokenizer st = new StringTokenizer(br.readLine());
         
         for (int i = 1; i <= N; i++) {
-        	now = Integer.parseInt(st.nextToken()) + 1000000001;
+        	now = Integer.parseInt(st.nextToken());
         	
         	if (arr[point] < now) {
         		arr[++point] = now;

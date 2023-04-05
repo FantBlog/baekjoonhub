@@ -29,6 +29,8 @@ public class Main {
 		if (end < s || e < start) return 0;
 		
 		if (s <= start && end <= e) {
+            if (start == end) return tree[idx][0] <= K ? 1 : 0;
+            
 			int lp = 0, rp = tree[idx].length;
 			int center;
 			
@@ -76,9 +78,9 @@ public class Main {
 			
 			l = -(int)1e9;
 			r = (int)1e9;
-			while (l <= r) {
+			while (l < r) {
 				center = (l + r) >> 1;
-				if (solution(s, e, center, 1, 1, N) > K - 1) r = center - 1;
+				if (solution(s, e, center, 1, 1, N) > K - 1) r = center;
 				else l = center + 1;
 			}
 			bw.write(l + "\n");

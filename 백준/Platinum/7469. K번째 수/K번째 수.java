@@ -78,8 +78,8 @@ public class Main {
 			r = (int)1e9;
 			while (l <= r) {
 				center = (l + r) >> 1;
-				if (solution(s, e, center, 1, 1, N) < K) l = center + 1;
-				else r = center - 1;
+				if (solution(s, e, center, 1, 1, N) > K - 1) r = center - 1;
+				else l = center + 1;
 			}
 			bw.write(l + "\n");
 		}

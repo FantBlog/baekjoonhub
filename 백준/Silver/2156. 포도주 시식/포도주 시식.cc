@@ -7,6 +7,8 @@ int m(int a, int b) {
 }
 
 int main() {
+    std::cin.tie(0)->sync_with_stdio(0);
+    
     int N, n, b{}, d[4]{};
 
     std::cin >> N;

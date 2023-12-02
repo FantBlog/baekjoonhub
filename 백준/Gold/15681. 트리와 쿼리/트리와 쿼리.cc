@@ -37,6 +37,8 @@ int main() {
 
     visited[R] = 1;
     DFS(R);
+    
+    for (int i = 0; i < LEN; i++) g[i].clear();
 
     while (Q--) {
         int query;

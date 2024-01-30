@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 const int LEN = 1e6 + 1, LEN2 = 1e3 + 1;
